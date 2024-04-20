@@ -36,6 +36,24 @@ class BinaryTree {
         return root;
     }
 
+    // Método para buscar un elemento en el árbol
+    public boolean search(int key) {
+        return searchRec(root, key);
+    }
+
+    private boolean searchRec(Node root, int key) {
+        if (root == null)
+            return false;
+
+        if (root.data == key)
+            return true;
+
+        if (key < root.data)
+            return searchRec(root.left, key);
+        else
+            return searchRec(root.right, key);
+    }
+
     
 }
 
